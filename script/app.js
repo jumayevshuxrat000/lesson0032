@@ -1,8 +1,6 @@
-// Class orqali elementlarni olish
 const submitBtn = document.querySelector('.submit-btn');
 const userCardsContainer = document.querySelector('.user-cards');
 
-// Inputlarni alohida olish
 const usernameInput = document.querySelector('.username-input');
 const firstnameInput = document.querySelector('.firstname-input');
 const lastnameInput = document.querySelector('.lastname-input');
@@ -11,7 +9,6 @@ const ageInput = document.querySelector('.age-input');
 
 const BASE_URL = 'http://localhost:3000/users';
 
-// Foydalanuvchini DOMga qo'shish
 const addUserToDOM = (user) => {
   const userCard = document.createElement('div');
   userCard.classList.add('user-card');
@@ -27,7 +24,6 @@ const addUserToDOM = (user) => {
   userCardsContainer.appendChild(userCard);
 };
 
-// Foydalanuvchini serverga qo'shish
 const createUser = async (user) => {
   try {
     const response = await fetch(BASE_URL, {
@@ -40,14 +36,13 @@ const createUser = async (user) => {
 
     if (response.ok) {
       const newUser = await response.json();
-      addUserToDOM(newUser); // Yangi foydalanuvchini DOMga qo'shish
+      addUserToDOM(newUser); 
     }
   } catch (error) {
     console.error('Foydalanuvchini yaratishda xatolik:', error);
   }
 };
 
-// Formni yuborish
 submitBtn.addEventListener('click', () => {
   const user = {
     username: usernameInput.value.trim(),
@@ -59,8 +54,6 @@ submitBtn.addEventListener('click', () => {
 
   if (user.username && user.firstName && user.lastName && user.gender && user.age) {
     createUser(user);
-
-    // Inputlarni tozalash
     usernameInput.value = '';
     firstnameInput.value = '';
     lastnameInput.value = '';
@@ -71,17 +64,15 @@ submitBtn.addEventListener('click', () => {
   }
 });
 
-// Foydalanuvchilarni olish va DOMga chiqarish
 const fetchUsers = async () => {
   try {
     const response = await fetch(BASE_URL);
     const users = await response.json();
-    userCardsContainer.innerHTML = ''; // Eski kartalarni tozalash
+    userCardsContainer.innerHTML = '';
     users.forEach(addUserToDOM);
   } catch (error) {
     console.error('Foydalanuvchilarni olishda xatolik:', error);
   }
 };
 
-// Sahifa yuklanganda foydalanuvchilarni chiqarish
 window.onload = fetchUsers;
