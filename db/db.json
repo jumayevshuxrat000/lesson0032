@@ -1,0 +1,46 @@
+{
+  "users": [
+    {
+      "id": "d5e7",
+      "username": "mrrenown",
+      "firstname": "shuxrat",
+      "lastname": "jumayev"
+    },
+    {
+      "id": "1718",
+      "username": "sad",
+      "firstname": "sad",
+      "lastname": "sad"
+    },
+    {
+      "id": "24b8",
+      "username": "Mr Renown",
+      "firstname": "Shuxrat",
+      "lastname": "Jemayev"
+    },
+    {
+      "id": "2c74",
+      "username": "sadf",
+      "firstName": "asd",
+      "lastName": "sad",
+      "gender": "dsa",
+      "age": "19"
+    },
+    {
+      "id": "b00f",
+      "username": "dsfa",
+      "firstName": "fdsa",
+      "lastName": "dsfa",
+      "gender": "fsda",
+      "age": "55"
+    },
+    {
+      "id": "cb9c",
+      "username": "sad",
+      "firstName": "sad",
+      "lastName": "sad",
+      "gender": "sa",
+      "age": "55"
+    }
+  ]
+}
